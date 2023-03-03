@@ -1,0 +1,625 @@
+//Novamente aqui para anotar o que compreendi na aula, 
+sendo assim o resumo novamente usando o vscode é como sempre um simples,
+/!/, deixa a criação de um index enstranhamente fácil kkkk,
+agora é sobre a criação de um site 100% adaptado para celulares,
+mas com o tempo ira ser adaptado para tablet e computador no final,
+sendo assim esse é de longe a Anotação mais importante das que fiz,
+por conta de ser um site responsivo que obviamente pode ser alterado
+depois para qualquer besteira minha dps de muita paciencia claro.//
+
+**LEMBRE-SE SEMPRE DA TAG SECTION ELA SEPARA O CÓDIGOS DOS OUTROS PERFEITA PARA MEXER NO CÓDIGO SEPARADAMENTE,
+É TAMBÉM DEIXA O CÓDIGO MAIS FÁCIL DE MEXER DEPOIS**
+
+=========================================================================================================================
+//Anotação////Index.html inicial//
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Aluno</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+        <span class="cabecalho__menu-hamburguer"></span>
+            <img src="AluraBooks/Logo.svg" alt="Logo Da AluraBooks">
+        </div>
+        <div class="container">
+            <a href="#"><img src="AluraBooks/Favoritos.svg" alt="Meus Favoritos?"></a>
+            <a href="#"><img src="AluraBooks/Compras.svg" alt="Carrinho De Compras?"></a>
+            <a href="#"><img src="AluraBooks/Usuário.svg" alt="Meu Perfil?"></a>
+        </div>           
+    </header>
+</body>
+</html>
+
+=========================================================================================================================
+
+//styles.Css Inicial//
+
+
+@import url("styles/header.css");
+
+:root {
+    --cor-de-fundo: #EBECEE;
+    --branco: #FFFFFF;
+}
+
+body  {
+    background-color: var(--cor-de-fundo);
+}
+
+=========================================================================================================================
+
+//header.css//
+*O header esta sendo usado para amarzenar o cabçalho*:
+
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url("../AluraBooks/Menu.svg");
+    display: inline-block;
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+}
+
+=========================================================================================================================
+
+//Estou usando o reset.css//
+*O reset é literalmente resetar o site pro zero sem uma predefinição des do começo já disponivel pelo navegador*
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+=========================================================================================================================
+
+//Explicando como funciona o checkbox pra marcar para ter uma caixinha para marcar//
+
+Exemplo:
+
+<input type="checkbox" id="menu" class="container__botao">
+            <label for="menu">
+                <span class="cabecalho__menu-hamburguer container__imagem"></span>
+            </label>
+
+*Explicação da professora*:
+
+[01:30] Então vamos salvar e olhar aqui o que aconteceu, agora quando eu clico no ícone do menu hambúrguer, 
+ele preenche o quadrado do checkbox. Então vamos entender melhor o que aconteceu aqui, o que eu fiz.
+
+[01:43] Primeiro, eu botei o input type checkbox, que é aquele input que detecta quando você clica e fica preenchido,
+então já é algo que guarda aquela sua ação de clique. E depois eu botei um label for menu, 
+label ele funciona para associar todos os elementos que estão dentro dele com outro, através do id,
+então ele está associando o span que está dentro dele com outro elemento que tem o id menu, que no caso é o input.
+
+=========================================================================================================================
+
+//Explicação Das Tag Checked//
+
+[05:59] Agora quando eu clico aparece a lista e quando eu clico novamente some com ela. Então, o que aconteceu aqui? 
+Isso é bem bacana de entender. Então eu botei um .container, no botão, selecionou o input, eu botei :checked,
+ esse checked é uma pseudo classe. Então, o que ele faz? Ele detecta se está preenchida aquele input checkbox.
+
+[06:21] E depois eu botei um acento til, aquilo é chamado combinador CSS. Um combinador CSS desse aqui, do acento til,
+ ele vai procurar um outro elemento que vem em seguida daquele de antes, que tem aquela classe que eu botei depois.
+
+[06:38] Então, o que ele está fazendo aqui? Esse caso é o mais perto que chegamos de uma condicional com CSS,
+então podemos já imaginar como se estivesse com JavaScript ali, então ele funciona,
+se o container botão tiver o checked, ele vai procurar outro que venha depois dele, 
+que tenha a classe lista menu e vai botar display block nele. Se não tivesse com lista menu não ia fazer nada,
+e também se não tivesse no checked não ia fazer nada.
+
+=========================================================================================================================
+
+//Explicação Da Professora Sobre a tag Position//
+
+[07:56] O que aconteceu aqui? Vou explicar, primeiro uma explicação abrangente desses positions para você entender 
+bem e usar em outros projetos. O position relative, ele libera a opção de você botar outros atributos como top, left,
+right, bottom que em português é topo, lado direito, lado esquerdo, e embaixo.
+
+[08:17] E o position absolute, ele permite que você movimente o seu elemento de acordo com outro que veio antes, 
+ou que é o pai, que esteja a position diferente de static que é a padrão. 
+Eu queria que ele se movimentasse de acordo com cabeçalho. 
+Então para eu mesma movimentar para ele ficar embaixo do cabeçalho.
+
+[08:39] Então eu botei um position relative no cabeçalho, 
+para ele ficar diferente de static, não vou usar nenhuma dessas propriedades que liberou para ele, 
+mas eu quero que ele fique diferente de static para o absolute funcionar.
+
+[08:53] Então eu podendo me movimentar de acordo com o cabeçalho, agora ele já está em cima dele, 
+porque eu não determinei nada. Mas agora vamos botar embaixo, olha aqui, eu vou botar um top: 100%;, salvei, 
+vamos olhar aqui. Agora ele ficou ali embaixo, ou seja, ele tirou 100% do cabeçalho e ficou para baixo. 
+Então só botamos aquele relative no cabeçalho para liberar esse absolute e conseguir movimentar 100%, 
+totalmente para baixo do cabeçalho, essa lista do menu.
+
+=========================================================================================================================
+
+//Explicação Sobre A FontGoogle//
+
+
+[02:20] Agora na direita. Ele tem um campo aqui, uma barra, que tem todo o resumo do que eu pedi. 
+Então tem a fonte Poppins com os 4 tamanhos que eu queria. Embaixo disso ele tem já me explicando como usar, 
+aqui “Use on the web”, a tradução aqui do que está escrito é para associar essa fonte, para importar ela, 
+copie o código abaixo e coloque no head dentro do html.
+
+[02:43] Então eu vou copiar todo aquele código que tem o link, vou no Visual Studio Code, 
+vou no “index.html”, e dentro do head eu vou botar, antes do styles, a fonte que eu importei, pronto, 
+já está associada com meu projeto.
+
+[02:58] E esse é um passo basicamente que você vai fazer em quase todos os projetos seus, 
+porque você vai escolher uma fonte que você quer, você vai importar ou você pode baixar e botar no projeto. 
+Mas assim fica mais certo que vai funcionar no computador de todo o mundo, importando do Google, 
+que é bem confiável que não vai cair.
+
+[03:15] Salvei, agora eu preciso aplicar, então, para fazer isso, eu vou lá no “styles.css”, 
+eu vou fazer uma variável para essa fonte, então dentro do root, eu vou botar --fonte-principal:, 
+vou botar entre aspas o nome da fonte “Poppins”;, salvei. Vou botar dentro do body já, 
+já vou aplicar para conseguirmos visualizar. Com o font-family: var(--fonte-principal);.
+
+
+=========================================================================================================================
+
+// Sobre flex e justify spaceBetween//
+
+[04:17] Lá no “carrossel.css”, nós vamos pegar o .card__descrição{display:flex;}. 
+Então o que aconteceu? E agora podemos ver que aquela div com a descrição, ela formou a primeira coluna como eu falei, 
+e a imagem ficou a segunda coluna, isso por causa do flex box. Transformamos todo esse espaço gigante, 
+aquela div que abrange todas elas, em um flex container e tanto aquela div que tem esse texto e a imagem, 
+viraram flex items. Por padrão, elas se posicionaram em linha, então ficou uma do lado da outra.
+
+[04:56] Também vou botar um justify-content: space-between;, que ele faz um espaçamento entre os 2 itens, 
+não é nada visível por enquanto, mas é que se aumentarmos a tela, ele já vai ter uma noção assim, 
+de fazer esse espaçamento sozinho. Então vamos fazer a segunda linha agora. 
+Eu vou até botar uma anotação aqui que vai ser a segunda linha.
+
+----------------------------------------------tópicos diferente----------------------------------------------------------
+
+[05:46] Agora vamos atingir aquela lista de links de tópicos e a classe dela é tópicos lista, então eu vou botar 
+.tópicos__lista {display: flex;}, botei o display flex, vamos então salvar e dar uma olhada aqui como é que ficou. 
+Agora está tudo junto um do outro e ele não quebra quando ele passa da tela. Olha, 
+ele está tentando alargar ela em vez de quebrar quando chegar no final, para fazer isso acontecer, 
+vamos botar flex-wrap: wrap;, salvei.
+
+[06:17] Agora ele quebrou, esse wrap quando chegar no final da tela, ele faz a quebra de linha do flex, 
+porque quando transformamos no flex-item como acabamos de fazer, ele botou no display flex, 
+ele botou todo mundo lá um do lado do outro. 
+Então definimos e tiramos do padrão e pedimos para ele quebrar essa linha quando ele chegasse no final.
+
+
+=========================================================================================================================
+
+//Como Colocar Um Slider No Site//
+
+
+
+**EXPLICAÇÃO DA PROFESSORA COMPLETA PORQUE É NÃO ENTENDI DIREITO ENTÃO ESTOU COLOCANDO COMPLETA A INFORMAÇÃO DESSA VEZ**
+
+********EXPLICAÇÃO TOTALMENTE DETALHADA PARA FACILITAR QUALQUER COISA DEPOIS É TAMBÉM PREGUIÇA DE ESCOLHER AS PARTES MAIS
+IMPORTANTE NO MOMENTO PERDÃO PEDRO NO FUTURO POR DEIXAR AS COISAS MAIS COMPLICADA MAS DEIXE PASSAR É TOTALMENTE SUA 
+CULPA NÃO FIQUE COM MAIS PREGUIÇA QUE AGORA NO FUTORO TAMO JUNTO**********
+
+
+
+[11:29] Dentro você vai botar os parâmetros, 
+métodos a ver com esse swiper que também vai encontrar todos só valores que você precisa aqui dentro dessa documentação. 
+Então eu quero que você copiei esse primeiro exemplo, que tem o speed space between, 
+e agora lá embaixo da tag <script> que você importou o arquivo JavaScript do swiper, você vai abrir outra tag <script>, 
+e vai colar o que acabou de copiar, também já temos dois parâmetros que é o speed e o spaceBetween.
+
+[11:59] O speed ele é a velocidade de troca de slide, 
+não vamos usar ele porque eu acho que ele faz mais sentido se a nossa troca for automática, e ela não é. 
+E o spaceBetween, assim como a sua tradução ele é o espaço entre eles. É o espaço entre cada slide. 
+Para o mobile eu acho 100px muito grande, então eu vou botar 10, e o que mais podemos botar?
+
+[12:26] Eu vou um pouco mais para baixo aqui no parâmetro para vermos outras coisas que seriam interessante, 
+no breakpoint ele tem no exemplo, uma opção que é slides per view, a tradução seria o slides por visualização, 
+e ele está pedindo um por vez, então esse faz sentido pegarmos, porque lá no Figma eles estão pedindo 3 por vez, 
+então eu vou copiar aqui esse slides per view, 
+vou no “index.html” e embaixo de spaceBetween eu vou botar um valor de 3 nesses slides, salvei.
+
+[12:57] Vamos olhar lá no navegador o resultado até agora, então já está aparecendo 3 imagens, 
+mas está uma em cima da outra, já vamos resolver isso, mas vamos entender o que eu fiz aqui, 
+então o que podemos concluir aqui? Independente do que estivermos estudando é muito bacana olhar a documentação, 
+porque ela vai ter todas as informações que você precisa para construir o projeto.
+
+[13:16] E se você olhar aqui, eu vou abrir o Swiper de novo, estou olhando o menu da esquerda aqui e baixando a rolagem, 
+tem muita coisa que dá para fazer com esse Swiper, e não só o que vamos fazer aqui, 
+se você quiser dar uma olhada depois, entra lá no site, dá uma estudada, 
+vai que você acha outra coisa bacana para aplicar no nosso projeto, e ir um pouco além do Figma, 
+eu acredito que tem muita coisa, muito legal, e que pode deixar um diferencial bem bacana no seu projeto.
+
+[13:46] Então vamos arrumar essa imagem aqui, eu vou lá no “carrossel.css”, e vou selecionar através de classe, 
+então eu vou botar .swiper-slide{}, que ele chegou no bloco que é dos slides e depois img, 
+aí ele vai pegar todos os imgs que estão dentro do swiper slide, e eu vou botar width: 100%; que é a largura, salvei, 
+vamos olhar. Agora já está ocupando cada um o seu espaço, ele já está funcionando quando passa para os lados.
+
+[14:13] Só que ele não aceitou as imagens aqui, ele está dando texto alternativo, deixa eu ver o que eu fiz errado. 
+Eu esqueci de botar o diretório certo, ele está dentro da pasta “img”, acontece, 
+tanta coisa que estávamos escrevendo acontece uns erros, salvei, vamos ver se agora está, agora está.
+
+[14:34] Enfim eu botei aqui o width 100%, e ele quis ocupar 100% da largura, ele até diminuiu um pouco, 
+para poder ocupar totalmente o espaço da imagem. E também depois que eu inicializei ele aqui, o JavaScript, 
+agora está funcionando o carrossel, não tinha testado antes, 
+ele já funciona porque ele já está chamando todas as funções internas lá daquele swiper-bundle.min.js que 
+é o arquivo JS do Swiper. Agora ele já está totalmente funcional sem termos que quebrar a cabeça.
+
+[15:03] Mas eu não quero essas setas que estão em cima do carrossel, 
+elas aparecem quando elas estão no layout que não são mobile, 
+então por enquanto vamos selecionar a classe delas no “index.html”, 
+depois vamos no carrossel e através dela, do seletor de classe .swiper-button-prev, swiper-button-next{}, 
+vamos dar um display:none; para desaparecerem dali, salvei, vamos olhar. Desapareceu, não temos mais ali.
+
+[15:32] Mas eu quero as bolas, que é o pagination. Então lá na linha 72, 
+onde está escrito if we need pagination, copia essa div, recorta, porque eu não quero ela embaixo, 
+e vamos botar em cima do swiper-wrapper, porque ele aparece em cima do carrossel essas bolinhas, não embaixo.
+
+[15:55] E também vamos inicializar, para isso vai lá na documentação, e na esquerda vai ter o modules “Pagination”, 
+cliquei ali, já é a primeira coisa, primeiro exemplo ali, ele explica como aplicar, 
+então tem o pagination el swiper pagination, copia só aquela parte de dentro das chaves, 
+porque a inicialização já temos, depois de copiar, vai embaixo de slidesPerView, e cola lá, agora já está funcionando, 
+já colocamos a inicialização. Salvei, vamos olhar se funcionou. Funcionou, estão até as bolas, 
+mas elas estão embaixo das imagens, e eu quero que elas vão para cima.
+
+[16:35] Isso acontece por causa da position que vem padrão com essas bolinhas, 
+então vamos pegar a classe do swiper pagination, no carrossel, e vamos botar .swiper-pagination{position: initial}, 
+para ele ir para posição inicial dele, agora ele está em cima, antes ele estava com position absolute, 
+aí ele estava em cima.
+
+[17:01] E vamos criar um espaçamento porque ele está bem junto, margin: 1em 0;, acho que está bom, acho que até menos, 
+deixa eu olhar lá no Figma para ver se ele é bem espaçado. Estou aqui no mobile, acho que dá para fazer menor, 
+vou botar como 0.5em, salvei, agora está ok, está bem um espaçamento igual ao do Figma.
+
+[17:32] Então aqui eu já mostrei um outro tipo de colocar margem, agora 2 valores, o primeiro ele é topo e embaixo, 
+e o outro que eu botei zero ele é os dois lados, direita e esquerda. 
+Então temos várias maneiras de determinar margins e paddings aqui.
+
+[17:45] E por fim, estamos quase terminando, ele está com uma scrollbar embaixo, 
+que indica quando está passando para os lados. Eu não quero ela, então vamos no “index.html”, e na linha 80, 
+ou onde ele está com a classe swiper-scrollbar no seu código. Só apaga aquela parte. Apaguei, salvei, agora certo, 
+já está aparecendo só as bolas que indicam cada espaçamento do carrossel, 
+e as imagens aparecendo bem bonitas e um pouco espaçadas cada uma.
+
+=========================================================================================================================
+
+----------------------
+===▒Informação extra▒===
+----------------------
+
+A propriedade align-items especifica o alinhamento dos itens dentro de um flex-container e o justify-content 
+define como o navegador irá distribuir o espaço entre os flex-itens.
+
+
+**O BOTÃO PARA FUNCIONAR CORRETAMENTE É SER CLICAVEL**
+
+<input type="checkbox" id="like" class="container__botao">
+<label for="like">
+  <img src="https://imgur.com/6nT3eyN.png" alt="Coração">
+</label>
+
+Ao usar o atributo for, com o valor igual ao id do input, você está associando a label com o input. 
+Dessa maneira, ao clicar na imagem que está dentro dessa label, irá interagir com o checkbox, 
+fazendo essa detecção do clique do usuário.
+
+**EXPLICAÇÃO RÁPIDA SOBRE O BACKGROUNDS DA PROFESSORA**
+
+[04:31] Então eu vou selecionar a section pela classe .tópicos{background: var(--azul-degrade);}, 
+salvei, vamos ver, clicou. Aqui eu tive que usar background, 
+ao invés de background-color porque a nossa variável ela está com linear gradiente. Se fosse somente uma cor, 
+eu poderia usar background color, mas como ela tem toda essa mistura, eu precisei usar background.
+
+
+**MINHA EXPLICAÇÃO SOBRE A BARRA DE PESQUISA(SIM ESSE CÓDIGO É A BARRA DE PESQUISA).**
+
+<input type="search" class="banner__pesquisa" placeholder="Qual será sua próxima leitura?">
+
+O input type serach e para criar a barrinha de pesquisa ja o placeholder é para deixar um texto como você pode ver.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+//UMA PISADA SOBRE A TAG DIV E UMA RESUMIDA DA EXPLICAÇÃOD DA PROFESSORA//
+
+então está cheio de div aqui, mas elas não têm significados semânticos.
+Elas são só para me ajudar a posicionar com flex box. Cuidado de usar tantas divs.
+
+[00:00] Acabamos de construir o carrossel usando o SwiperJS, 
+e a última coisa que falta nesta seção de novos lançamentos é aquele card, 
+que tem uma sugestão de alguma outra leitura e que talvez você se interesse.
+
+[00:12] Então, primeiro eu quero aqui que você acompanhe minha linha de raciocínio, antes de construir, 
+eu estou olhando aqui o card, o que eu consigo identificar? Temos um quadrado que tem todo o texto, 
+outro quadrado do lado que ele tem a imagem, embaixo, nós temos um grupo de ícones e, por fim, um botão.
+
+[00:32] Então, tudo que eu contei aqui teria 4 elementos. E para isso, eu vou fazer 2 linhas e 2 colunas em cada linha. 
+E eu vou fazer isso com o flex box
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+//Explicação da professora//
+
+[01:46] O texto e aquele input, mas vamos entender essa escolha de elementos aqui. 
+Eu criei uma section para fazer essa separação. Agora não tem nada a ver com header então já fiz outra seção, 
+uma nova, e dentro eu botei um h2, que é um dos tipos de título o h ele vai do 1 até o 6.
+
+[02:03] Só que o 1, ele é aconselhado a usar somente uma vez por questões de SEO. 
+Então já passei para outro tipo de título que é h2. Ele também funciona como título mas não é o principal da página. 
+Então botei uma classe, botei o texto e depois eu botei uma tag de p, que é a tag de parágrafo, porque aquele texto, 
+ele não era título, ele não era nada. Então ele é um parágrafo.
+
+[02:28] E depois eu botei um input type search, que ele é um input de pesquisa, e ele tem o atributo placeholder, 
+que é aquele que você botaria, vai ficar aquele texto que quando você clica e começa a escrever ele some, então, 
+mas ele está ali já escrito e deixa intuitivo para o usuário, o que tem que botar ali, 
+que no caso seria qual sua próxima leitura, que pela interpretação dele, ele vai entender que é um livro.
+
+**EXPLICAÇÃO DOS BACKGROUNDS**
+
+[03:23] Primeiro, eu vou começar pela classe .banner{}, e vou colocar a cor de fundo, 
+mas eu vou olhar aqui qual que é a cor de fundo no Figma, então abri aqui o Figma, 
+eu vou clicar no quadradinho do fundo. E a cor de fundo é aquele linear gradiente que tínhamos aplicado, 
+na fonte do menu hambúrguer, então já temos essa variável, é só aplicar ela, background: var(--azul-degrade);, 
+eu usei aqui a propriedade do background por causa dele ser esse linear gradiente. Se fosse só uma cor única, 
+você poderia botar como background-color.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**EXPLICAÇÃO DAS MEDIAS *EM* ETC**
+
+[06:37] Então, eu vou direto no banner, e vou colocar aqui no banner um padding: 2.5em 2em;, salvei, 
+e vou olhar aqui o resultado, agora ele ficou espaçamento até a quebra de texto ficou igual. Então por que eu fiz isso? 
+O padding ele cria aquele espaçamento interno, então ele vai limitar aqui até onde vai os meus elementos, 
+eu botei com a medida EM, que significa o tamanho da fonte padrão que eu tinha colocado que era 16px, 
+então 2.5 ele faz “2.5 x 16”, e aqui ele faz 2. Então ficaria 32px.
+
+[07:16] Só que é uma medida mais responsiva, fica mais fácil de ele se adaptar a tela, 
+inclusive eu vou deixar um artigo totalmente sobre essas medidas responsivas que eu já usei aqui, que foi o vw e o em, 
+no para saber mais, e você pode consultar lá.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**EXPLICAÇÃO DA PROFESSORA SOBRE BORDAS**
+
+[01:32] Então, o que já conseguimos construir aqui? Nós colocamos uma borda através do atributo border, 
+que a tradução é borda, e ele precisa de 3 informações para construir ela, que é o tamanho, o tipo e a cor. 
+Eu pedi o tamanho como 1px, eu vou ter o tipo como sólido, existe outros tipos, mas essa linha reta, sem tracejado, 
+sem nada, que ela é contínua, é sólida, e o var branco, botei a cor como branca, que ele é aquele hexadecimal, 
+que nós definimos na variável.
+
+[02:02] Também troquei a color, o color var branco, que é a cor da escrita, quando escrever lá dentro, 
+ele vai ficar branco. Eu botei o background color como transparente, geralmente usamos cores, 
+mas também tem essa opção de colocar transparente. E defini o border-radius como 24px, 
+border-radius ele arredonda as bordas, que é aqui do canto.
+
+[02:25] Deixa eu até escrever aqui para mostrar que ficou branco. Agora está branco quando escrevemos. 
+Por fim, o que falta fazer aqui? Falta mexer no espaçamento. Então vamos colocar um padding: 1em; coloquei, 
+agora ele está com o espaçamento dos lados, em cima, e embaixo. E falta botar o tamanho, vou botar width: 100%, 
+que eu quero que a largura ocupe 100% do que pode ocupar aqui no banner.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+**********SUPER EXPLICAÇÃO SOBRE O PLACEHOLDER É IMAGEM ETC**********
+
+[03:49] Então vamos começar a botar a mão na massa aqui. Para acessar aquele placeholder, 
+nós vamos aqui no “banner.css”, botar novamente a classe que é banner__pesquisa::placeholder{}, 
+dentro dela nós vamos definir novamente a fonte, tamanho e peso, deixa eu conferir no Figma qual que é, 
+vou clicar lá em cima do placeholder, vou no menu da direita, no “Inspect”, a fonte é a mesma, 
+o peso é 400 e o tamanho é 14.
+
+[04:23] Então vamos lá, botar font-family:, 
+vai ser a variável lá da fonte principal var(--fonte-principal); font-size:14px; font-weight: 400, salvei. 
+Olhar o resultado e agora a fonte está aplicada. Quando eu botei no body aquela fonte determinada, com o tamanho e peso, 
+ele estava atingindo todos os elementos entre si, não os atributos dentro desse elemento, ou seja, 
+o placeholder não recebeu aquelas configurações da fonte, então nós precisamos botar de novo, 
+que foi isso que fizemos agora, então, nada que nunca tenhamos visto, que é font-family, font-size, font-weight.
+
+[05:02] Também precisamos que ele seja alinhado para o centro. 
+Então o text-align: center; e a cor desse placeholder é branca, então vamos botar com color: var(--branco);, salvei, 
+vamos olhar o resultado, agora já está ali, já está centralizado e branco, então certo.
+
+[05:23] Agora falta colocar a lupa, parte mais legal, mais bonita é a lupa, 
+então vamos colocar ela através do background então “banner.css” 
+eu botei o atributo background: url(“../img/Lupa.svg”);, salvei, fui olhar no navegador, está repetindo várias vezes, 
+mas a imagem está ali, quando queremos botar uma imagem botamos assim, uma imagem de fundo. Eu vou botar um no-repeat, 
+depois do diretório dessa imagem, agora, ele parou de repetir. 
+Isso acontece porque quando tentamos botar um fundo de alguma imagem, 
+ele vai tentar repetir até preencher totalmente aquele espaço. Não era o que queríamos, então botamos um no-repeat.
+
+[06:16] Também vou dar uma arrumada na posição, background-position: 1em;, será? Salvar, ver aqui o resultado. 
+Então 1em eu acho que está ok, porque agora ele ficou bem certo do lado do texto de “Qual será sua próxima leitura?”. 
+Eu vou escrever aqui, vai sumir a lupa também.
+
+[06:37] Como o designer, não tinha deixado explícito se essa lupa ia continuar, enquanto quando a pessoa escrevesse, 
+eu não tenho essa informação, eu interpretei que ela some, 
+porque ela está aqui no meio também no Figma, ela está no meio do input, 
+então eu acho que ficaria muito estranho se a pessoa escrevesse, e a lupa, continuasse lá.
+
+[06:56] Então do jeito que fizemos ali aplicamos no background do placeholder, 
+ele vai sumir junto quando estiver escrevendo. Abre no navegador e testa comigo. 
+Vou colocar no “Qual será sua próxima leitura?”, “livros bacanas de front-end da autora Agarikov”. 
+Então agora ele está bem bonito, ele também tem o x, que é padrão do input search, 
+se você clicar do lado ele apaga o que você estava escrevendo, e é bem legal essa etapa de botar a lupa.
+
+[07:28] Geralmente em alguns projetos tem isso de botar a imagem e o texto no placeholder, 
+não só na barra de pesquisa mas também em cadastro, que tem o ícone e o que deve ser colocado, um exemplo.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+*****VIRCULAS NO .XIMBAS {}*****
+
+[05:52] É bem bacana essa maneira de reutilizar estilos aqui que eu botei uma classe vírgula outra classe, 
+porque ele aplica a mesma coisa para ambas, ao invés de ter que botar 2 vezes a mesma coisa. 
+Tem vários lugares desse código que provavelmente você poderia usar isso e refatorar o código e deixar ele menor.
+
+[EXEMPLO]
+
+.contato__titulo, 
+.contato__texto {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}   
+
+********************EXPLICAÇÃO DA TAH HR(<hr />):********************
+
+A tag <hr /> é literalmente um quadrado a função dele é fazer uma linha como se fosse uma bordar então e somente pro,
+estilo do site mesmo nenhuma função gigante.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+{*********EXPLICAÇÃO DA MEDIA QUERIES**********}
+
+[02:25] Mas como é que botamos no nosso código para fazer esse layout maior? 
+Então eu quero que você abra o Visual Studio Code e vamos no “header.css” 
+e lá embaixo vamos botar @media screen and (min-width: 1024px){}. O que é essa estrutura que eu botei aqui? I
+sso se chama media query, que usamos para aplicar estilos quando chega em tal determinado tamanho de tela.
+
+[02:54] E como é que a estrutura dele? É o @media, isso aqui é obrigatório botar, que é para dizer que é um media query. 
+Esse screen tem como fazer sem colocar ele, 
+mas ele é um media type e eu quero dizer que ele é a tela, eu vou até deixar um artigo no Para Saber Mais, 
+para você ver que tem outros tipos de media types e entender melhor porque eu botei esse screen.
+
+[03:17] Eu disse que botando esse and que a tradução seria “e”, que é o mínimo da largura da tela seja 1024px, 
+que é o tamanho que o designer botou ali 1024. Geralmente, quando fazemos layouts com o mobile first, 
+nós botamos o min-width que aí chega quando o mínimo do tamanho da tela for 1024px, 
+ele vai fazer aqueles estilos de dentro, caso você faça desktop first, 
+que é você começa no tamanho do computador e depois vai diminuindo. Você usa o max-width, ou seja, 
+o max-width ele pega quando o tamanho da tela for o máximo daquele tamanho, 
+e vai aplicar aqueles estilos e aqui queremos com no mínimo 1024. 
+Mas assim é uma questão de convenção que botamos max quando é desktop, e min quando é mobile.
+
+
+▒▒▒ INFORMAÇÃO EXTRA SOBRE MEDIA QUERIES ▒▒▒
+
+As media queries definem condições para que o CSS seja utilizado em cenários específicos. 
+Se essas condições forem aprovadas, ou seja, se o dispositivo se adequar a todas as condições estabelecidas, 
+o CSS será aplicado. Seguindo esse conceito, 
+você consegue transformar seus projetos em layouts responsivos com o auxílio de media queries. 
+Sua estrutura básica consiste em:
+
+@media (min-width ou max-width = tamanho da tela) { }
+Uma decisão que precisa ser tomada é de se usar max-width ou min-width. 
+O max é ideal para quando temos um layout Desktop pronto e queremos adaptá-lo para 
+dispositivos menores - vamos então definindo novas regras que se aplicam só aos dispositivos de no máximo certo tamanho. 
+Já o min pode ser útil quando criamos um site só mobile ou começamos pelo mobile - nesse caso, 
+é mais fácil ter um layout base e ir customizando para dispositivos maiores, com no mínimo certo tamanho.
+
+Você também pode criar uma media querie mais complexa utilizando operadores lógicos para incluir outros argumentos 
+na condição estabelecida. Os operadores que podem ser usados são: not, and, e only 
+mas neste curso vamos usar apenas o and. A sua tradução para português significa ”e”, 
+tendo a função de ligar dois termos independentes ou mais. Com isso, 
+fomos aumentando a estrutura da media querie e colocando outro argumento: o screen.
+
+@media screen and (min-width ou max-width = tamanho da tela) { }
+O screen é um media type, ou seja, um tipo de mídia. 
+É outro tipo de característica comumente usada na declaração de media queries. Se você não especificar nenhum valor, 
+ele irá utilizar o seu padrão que é “all” (para todos os tipos de mídia).
+
+╝╝╝╝╝EXPLICAÇÃO SOBRE AS MARGINS RIGHT LEFT ETC╝╝╝╝╝
+
+[06:31] Quando usamos o transform flex container, quando colocamos lá dentro uma margem de 
+left, right, bottom se botarmos o valor auto, ele vai tentar preencher todo o espaço que está sobrando. 
+Então aqui no caso foi, ele preencheu toda a direita com a margem, 
+então todos os itens foram empurrados para a esquerda e isso você pode aplicar em outros projetos, 
+em outros casos que pode acontecer. Por isso que eu já estou exemplificando de um modo geral o que aconteceu nesse caso.
+
+☼☼☼☼☼ EXEMPLO DE COMO USAR AS MEDIDAS DE MARGINS É PADDINGS ☼☼☼☼☼
+
+///EXPLICAÇÃO DA PROFESSORA///
+[04:43] Então vamos lá novamente, embaixo de onde acabamos de colocar display flex no “carrossel.css”. Então vamos colocar uma margin: 20vw 3em 20vw, salvei, vamos dar uma visualizada aqui no resultado, já está bem, centralizado, ele acabou afastando das bordas da página e já afastou um pouco os itens do título da próxima seção que é o “Mais vendidos”.
+
+[05:08] Então, o que eu fiz aqui nesses valores da margem? Eu já expliquei para vocês aquela cola do fuso horário, 
+do relógio, para entender do que se trata cada uma das informações. Então eu botei zero no topo, 
+tanto na direita quanto na esquerda eu botei 20vw, eu escolhi o vw porque ele é a largura do viewport, 
+a largura da nossa tela. Então como eu queria que ele afastasse tanto da tela quanto da borda da tela, 
+eu usei essa medida, então escolhi tipo, 20 em cada lado, e no meio ocupou 60% da tela. E para baixo, 
+como era um valor que não precisava me preocupar muito, eu botei em, porque é o tamanho da fonte.
+
+
+▼▼▼▼▼ EXEMPLO E EXPLICAÇÃO DA PROFESSORA SOBRE OS SINAIS USADOS ▼▼▼▼▼
+
+[03:07] Então, o que eu usei aqui? Eu usei vários combinadores css, 
+inclusive eu vou deixar no Para Saber Mais uma mini explicação sobre eles e alguns links de apoio. 
+Então, o que esses combinadores fazem? Esse combinador do til, 
+ele procura algum outro elemento que esteja em seguida dele, que tem aquela classe, 
+então, o que aconteceu aqui? 
+Ele procurou outro elemento que tivesse a classe .container__rotulo, que fosse depois do container__botão, 
+aí ele encontrou nosso label.
+
+[03:39] Depois do label botamos um sinal de mais, o sinal de uma mais ele procura algo que está dentro deste elemento. 
+Ou seja, temos um label e dentro dele tem um .cabeçalho__menu-hanburguer. Então foi isso que ele fez, 
+ele foi pegar lá dentro o elemento que fosse cabeçalho, menu hambúrguer.
+
+[03:55] E também vimos aqui a pseudo classe checked e ela detecta se o input está com o checked, 
+isso já vimos em outra aula também.
+
+[07:42] Para isso vamos botar 
+.lista-menu__item:hover > .lista-menu__link{-webkit-text-fill-color: var(--branco);}, salvei, 
+vamos testar. Agora ele está ficando branco quando passamos, eu já vou aproveitar e tirar a decoração do link, 
+então text-decoration: none;. Pronto está do jeito que devia ficar, com fundo azul e a cor branca.
+
+[08:20] O que aconteceu aqui? Eu tive que usar esse webkit text fill color, porque lá no início do projeto, 
+para botar essa cor azul, aquele degradê na fonte, nós tivemos que colocar um background e depois associar ele à fonte. 
+E quando usamos o webkit text fill color tínhamos definido como transparente, 
+então ele não aplicava cor nenhuma além daquele background estava aplicado.
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+====================---------------==================------------------======================------------------==========
